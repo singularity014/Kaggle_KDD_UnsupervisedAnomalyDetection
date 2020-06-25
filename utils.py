@@ -8,6 +8,11 @@ from sklearn.preprocessing import LabelEncoder
 
 
 
+# MODEL CONFIGS
+N_ESTIMATORS = 100
+MAX_SAMPLES = 256
+CONTAMINATION = 0.1
+RANDOM_STATE = 42
 
 # CONTAINS FEATURES AND CONFIGS
 COLUMNS = \
@@ -71,20 +76,8 @@ def labelEncodeDataFrame(df):
     return df
 
 
-def shuffle_split(df):
-    '''
-    for shuffling and creating train, test of dataset
-    :return:
-    '''
-    for f in range(0, 3):
-        df = df.iloc[np.random.permutation(len(df))]
 
-    df2 = df[:500000]
-    lables = df2["label"]
-    df_validate = df[500000:]
-    x_train, x_test, y_train, y_test = train_test_split(df2, lables,
-                                                        test_size=0.2,
-                                                        random_state=42)
-    x_val, y_val = df_validate, df_validate["label"]
+
+
 
 
