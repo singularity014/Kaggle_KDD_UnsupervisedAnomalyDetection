@@ -59,7 +59,7 @@ COLUMNS = \
         'label'
     ]
 
-# Label Encoder
+# Label Encoder -----------
 def labelEncodeDataFrame(df):
     '''
     Takes a dataframe and Label Encodes all the column
