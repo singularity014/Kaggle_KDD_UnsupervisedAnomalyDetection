@@ -6,8 +6,6 @@ from sklearn.ensemble import IsolationForest
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-
-
 # MODEL CONFIGS
 N_ESTIMATORS = 100
 MAX_SAMPLES = 256
