@@ -2,7 +2,7 @@
 
 This is the data set used for The Third International Knowledge Discovery and Data Mining Tools Competition, which was held in conjunction with KDD-99 
 The Fifth International Conference on Knowledge Discovery and Data Mining. 
-The competition task was to build a network intrusion detector, a predictive model capable of distinguishing between bad'' connections, called intrusions or attacks, andgood'' normal connections
+The competition task was to build a network intrusion detector, a predictive model capable of distinguishing between bad'' connections, called intrusions or attacks, andgood'' normal connections.
 
 DataSet: 
 We will use the KDDCUP 1999 data set, which contains an extensive amount of data representing a wide variety of intrusion attacks. 
