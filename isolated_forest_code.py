@@ -1,9 +1,10 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.ensemble import IsolationForest
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelBinarizer
+'''
+@author:
+Prafull SHARMA
+'''
+
+
+
 from utils import *
 
 
@@ -31,3 +32,9 @@ portsweep        3
 satan            2
 ------------------
 '''
+
+# Label Encoding categorical columns
+df = labelEncodeDataFrame(df)
+print(df.head())
+
+

@@ -1,5 +1,15 @@
-# CONTAINS FEATURES AND CONFIGS
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from numpy.distutils.system_info import dfftw_info
+from sklearn.ensemble import IsolationForest
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 
+
+
+
+# CONTAINS FEATURES AND CONFIGS
 COLUMNS = \
     [
         'duration',
@@ -45,3 +55,36 @@ COLUMNS = \
         'dst_host_srv_rerror_rate',
         'label'
     ]
+
+# Label Encoder
+def labelEncodeDataFrame(df):
+    '''
+    Takes a dataframe and Label Encodes all the column
+    in the DataFrame
+    :param df: pandas DataFrame
+    :return: Labels Encoded DataFrame
+    '''
+    objList = df.select_dtypes(include="object").columns
+    le = LabelEncoder()
+    for feat in objList:
+        df[feat] = le.fit_transform(df[feat].astype(str))
+    return df
+
+
+def shuffle_split(df):
+    '''
+    for shuffling and creating train, test of dataset
+    :return:
+    '''
+    for f in range(0, 3):
+        df = df.iloc[np.random.permutation(len(df))]
+
+    df2 = df[:500000]
+    lables = df2["label"]
+    df_validate = df[500000:]
+    x_train, x_test, y_train, y_test = train_test_split(df2, lables,
+                                                        test_size=0.2,
+                                                        random_state=42)
+    x_val, y_val = df_validate, df_validate["label"]
+
+
